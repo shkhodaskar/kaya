@@ -1,22 +1,33 @@
-.App {
-  text-align: center;
+.device_container{
+    /* width: 40%; */
+    max-width: 500px;
+    min-width: 320px;
+    min-height: 667px;
+    margin:auto;
+    border: 12px solid #B22222;
+    border-radius: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
+.background_ios{
+    background-image: url(./resources/ios_background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+    margin: auto;
+    z-index : 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.icon{
+    background: #eeeeee;
+    width: 17rem;
+    padding: 1rem;
+    margin: 2rem auto;
+    text-align: center;
 }
 
-.App-link {
-  color: #09d3ac;
+.icon h4{
+    margin: 0.5rem 0;
+    color: white;
+    letter-spacing: 0.15rem;
 }
