@@ -4,7 +4,7 @@
     min-width: 320px;
     min-height: 667px;
     margin:auto;
-    border: 12px solid #B22222;
+    border: 2px solid #B22222;
     border-radius: 10px;
 }
 
@@ -13,21 +13,45 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
     overflow: auto;
     margin: auto;
     z-index : 0;
 }
 
 .icon{
-    background: #eeeeee;
-    width: 17rem;
-    padding: 1rem;
-    margin: 2rem auto;
+    background-color: rgba(red, green, blue, 0.5);
+    width: 4.5rem;
+    height: 6rem;
+    /* padding: 0.5rem; */
+    border-radius: 0.3rem;
     text-align: center;
+    transition: all 0.3s linear;
+    margin: auto;
+}
+.icon img{
+    width: 80px;
+    height: 80px;
 }
 
 .icon h4{
-    margin: 0.5rem 0;
+    font-size: 11px;
+    margin: 0.1rem auto;
     color: white;
-    letter-spacing: 0.15rem;
+    letter-spacing: 0.01rem;
+    width: 80px;
+}
+
+@media screen and (min-width: 320px) {
+    .background_ios {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 112px 112px 112px 112px;
+    }
+}
+  
+@media screen and (min-width: 500px) {
+    .background_ios {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
