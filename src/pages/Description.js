@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import FormGroup from '@material-ui/core/FormGroup';
 import { FormControlLabel } from '@material-ui/core';
 import CustomButton from '@material-ui/core/Button';
+import questionMark from '../resources/question_mark.png'
 
 import { Link } from 'react-router-dom'
 
@@ -33,20 +34,35 @@ function Description() {
     };
 
     return (
-        <div className = "text-center">
+        <div style={{padding:"1rem"}}>
             {/* you put Title here */}
-            <h1>Pre-experiment instructions</h1>
-            {/* you put Some Description here */}
-            <p> <br/>Purpose and Procedure<br/>
-                Thank you for taking part in this experiment. We are studying how users understand fertility self-tracking tools and algorithms. The experiment should take approximately 60 minutes to complete. [TODO: what the participant will do]
+            <h1 style={{fontSize:"5vw", textAlign:"center"}}>Instructions and texts for the prototype</h1>
+                {/* you put Some Description here */}
+                <p> <br/><h2 style={{fontSize:"4vw"}}>Purpose and Procedure</h2><br/>
+                Thank you for taking part in this experiment. 
+                We are studying how users understand fertility self-tracking tools and algorithms. 
+                The experiment should take approximately 60 minutes to complete. 
+                <br/><br/>
+                We would like you to analyze a prototype of a fertility app. 
+                You will be guided through the process of reading the app store page of the app, downloading the app, inputting fertility-related data, and analyzing a calendar and a graph visualization.
+                <br/><br/>
                 You will see two versions of the same app, one after the other. There will be instructions for what to do. If you ever need to retrieve the instructions, just tap the (?) in the upper right corner:
-                {/* <image> */}
+                <div style={{textAlign:"center"}}>
+                    <img src={questionMark}/>
+                </div>
                 <br/>
-                [ PROCEED ]
-                <br/>Responses will be Confidential<br/>		
-                All records from this study will be kept private. Your responses will not affect your current or future experience or relations with UCI. In addition, in any sort of report we might publish, we will not include any information that makes it possible to identify you. Research records will be stored securely, and only researchers will have access to the records.		
-                <br/>Contacts and Questions<br/>	
-                This survey is being conducted by the HAI lab in the Informatics Dept. at UCI. If you have any questions about this study, please feel free to contact the researchers at support@twitter.com.
+                <br/><h2 style={{fontSize:"4vw"}}>Responses will be Confidential</h2><br/>		
+                All records from this study will be kept private. 
+                Your responses will not affect your current or future experience or relations with UCI. 
+                In addition, in any sort of report we might publish, we will not include any information that makes it possible to identify you. 
+                Research records will be stored securely, and only researchers will have access to the records.
+                <br/>
+                <br/><h2 style={{fontSize:"4vw"}}>Contacts and Questions</h2><br/>	
+                This survey is being conducted by the HAI lab in the Informatics Dept. at UCI. 
+                If you have any questions about this study, please feel free to contact the researchers at mcostafi@uci.edu.
+                <br/>
+                <br/><h2 style={{fontSize:"4vw"}}>Statement of Consent</h2><br/>
+                By clicking "I agree", you consent to participate in this study.
             </p>
             
             <FormGroup>
@@ -57,18 +73,23 @@ function Description() {
                                 className = 'mx-2'
                     />
                 }
-                label="Do you agree with the statements above?"
+                label="I agree"
                 />
             </FormGroup>
-            <Link to = "/login">
-            <CustomButton   className="mb-2" 
-                            variant="contained" 
-                            color="primary" 
-                            disabled={disabled}
-            >
-                START
-            </CustomButton>
-            </Link>
+
+            <div className="text-center">
+                <Link to = "/login">
+                
+                <CustomButton   className="mb-2" 
+                                variant="contained" 
+                                color="primary" 
+                                disabled={disabled}
+                >
+                    START
+                </CustomButton>
+                </Link>
+            </div>
+            
             
             
         </div>
