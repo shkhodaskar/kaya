@@ -110,11 +110,11 @@
 }
 
 .AppDescription{
-    padding: 1rem;
+    padding: 0rem;
 }
 
 .AppDescription h4{
-    margin: 0rem 0rem 1rem 0rem;
+    margin: 1rem 1rem 1rem 1rem;
 }
 
 .AppDescription p{
@@ -130,14 +130,14 @@
     width: 95vw;
     max-width: 500px;
     position: center;
-    
+    margin: auto;
 }
 
 .install_button{
     background-color : #007aff;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 320px) {
     .simple_info {
         display: grid;
         grid-template-columns: 1fr 0.7fr 0.7fr 0.7fr;
@@ -145,7 +145,7 @@
     }
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 320px) {
     .Rating {
         display: grid;
         grid-template-columns: 0.2fr 1fr;
