@@ -3,7 +3,6 @@ import './AppStore.css';
 
 import Install from '@material-ui/core/Button';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import Fab from '@material-ui/core/Fab';
 
 import Preview1 from '../resources/PreView1.jpeg';
 import Preview2 from '../resources/PreView2.jpeg'
@@ -11,7 +10,6 @@ import Preview2 from '../resources/PreView2.jpeg'
 import KAYAIcon from '../resources/logo.png';
 
 import StarRatings from 'react-star-ratings'
-import Modal from '@material-ui/core/Modal'
 
 import {Link} from 'react-router-dom'
 
@@ -61,16 +59,26 @@ class AppStore extends Component{
                 <Install    className='install_button' 
                             variant="contained" 
                             size="small" 
-                            color="primary"
-                    >Install
+                            style={{
+                                backgroundColor: "#157EFB",
+                                color:"#ffffff",
+                                borderRadius:"20px",
+                            }}
+                    >GET
                 </Install>
                 {/* </button> */}
             </div>
             <div className="BlankNull"></div>
             <div className="OtherButton">
-                <Fab aria-label="Other" size = "small">
-                    <MoreHorizIcon />
-                </Fab>
+                <button style={{
+                    backgroundColor: "#157EFB",
+                    color:"#ffffff",
+                    width: "27px",
+                    height: "27px",
+                    borderRadius:"50%",
+                }}>
+                    <MoreHorizIcon style={{marginLeft:"-0.4rem"}}/>
+                </button>
             </div>
             <div className="Rating">
                 <h4>4.7</h4>
