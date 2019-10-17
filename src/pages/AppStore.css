@@ -23,8 +23,9 @@
 }
 
 .Logo img{
-    width: 8rem;
-    height: 8rem;
+    margin: 1rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 0.3rem;
     transition: all 0.3s linear;
 }
@@ -110,11 +111,11 @@
 }
 
 .AppDescription{
-    padding: 0rem;
+    padding: 1rem;
 }
 
 .AppDescription h4{
-    margin: 1rem 1rem 1rem 1rem;
+    margin: 0rem 0rem 1rem 0rem;
 }
 
 .AppDescription p{
@@ -127,7 +128,7 @@
     min-height: 667px;
     max-height: 100vh;
     min-width: 350px;
-    width: 95vw;
+    width: 100%;
     max-width: 500px;
     position: center;
     margin: auto;
