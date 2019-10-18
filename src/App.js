@@ -30,7 +30,6 @@ export default class App extends Component {
     }
 
     this.handler = this.handler.bind(this)
-    this.handleInstall = this.handleInstall.bind(this)
     console.log(this.state.type)
   }
 
