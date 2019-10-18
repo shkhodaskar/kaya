@@ -7,6 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {Route} from 'react-router-dom'
 import './App.css'
 
+import questionMark from './resources/question_mark.png'
+
+
 function getRandomType(){
   return Math.floor(Math.random() * 2) === 1 ? 'A' : 'B';
 }
@@ -52,7 +55,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='device_container'>
+      <div width=""className='device_container'>
+        <img className = "instruction_img" src={questionMark}/>
         <Route exact path = "/" component = {Description}/>
         <Route path = "/login" component = {Login}/>
         <Route  path = "/ios_backgroud" 
