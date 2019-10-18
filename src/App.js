@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import {Route} from 'react-router-dom'
+
+import './App.css'
+
+import Splash from './pages/Splah'
 import Login from './pages/Login'
 import Description from './pages/Description'
 import Home from './pages/Home'
 import Store from './pages/Store'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import {Route} from 'react-router-dom'
-import Splash from './pages/Splah'
-import './App.css'
 import Disagree from './pages/Disagree'
-
 //import InstructModal from './components/Modal'
 
 import questionMark from './resources/question_mark.png'
