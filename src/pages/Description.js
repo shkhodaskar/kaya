@@ -1,23 +1,12 @@
 import React from 'react';
-import Checkbox from '@material-ui/core/Checkbox';
-import { green } from '@material-ui/core/colors';
-import { withStyles } from '@material-ui/core/styles';
 import FormGroup from '@material-ui/core/FormGroup';
 import { FormControlLabel } from '@material-ui/core';
 import CustomButton from '@material-ui/core/Button';
 import questionMark from '../resources/question_mark.png'
 
 import { Link } from 'react-router-dom'
-
-const GreenCheckbox = withStyles({
-    root: {
-        color: green[400],
-        '&$checked': {
-            color: green[600],
-        },
-    },
-    checked: {},
-})(props => <Checkbox color="default" {...props} />);
+import RadioGroup from '@material-ui/core/RadioGroup'
+import Radio from '@material-ui/core/Radio'
 
 function Description() {
 
@@ -25,12 +14,15 @@ function Description() {
         checkedAgree: false
     })
 
-    const [disabled,setDisabled] = React.useState(true)
-
-    const handleChange = name => event => {
-        setChecked({ ...checked, [name]: event.target.checked });
-        setDisabled(!disabled)
-        console.log(disabled);
+    const handleChange = event => {
+        if (event.target.value === "I agree") {
+            setChecked({checkedAgree:true})
+        }else{
+            setChecked({checkedAgree:false})
+        }
+        //setChecked(e.target.value)
+        console.log(event.target.value)
+        console.log(checked.checkedAgree)
     };
 
     return (
@@ -66,28 +58,41 @@ function Description() {
                 
             
             <FormGroup>
-                <FormControlLabel control={
-                    <GreenCheckbox   checked={checked.checkedAgree} 
-                                onChange={handleChange('checkedAgree')} 
-                                value = 'checkedAgree' 
-                                className = 'mx-2'
-                    />
-                }
-                label="I agree"
-                />
+                <RadioGroup 
+                    defaultValue="I disagree" 
+                    aria-label="agreement" 
+                    name="customized-radios"
+                    onChange={handleChange}
+                    >
+                    <FormControlLabel value="I agree" control={<Radio />} label="I agree" />
+                    <FormControlLabel value="I disagree" control={<Radio />} label="I disagree" />
+                </RadioGroup>
             </FormGroup>
 
             <div className="text-center">
+                {checked.checkedAgree === true ? 
+                
                 <Link to = "/login">
                 
                 <CustomButton   className="mb-2" 
                                 variant="contained" 
                                 color="primary" 
-                                disabled={disabled}
+                >
+                    START
+                </CustomButton>
+                </Link> 
+                :
+                <Link to = "/disagree">
+                                
+                <CustomButton   className="mb-2" 
+                                variant="contained" 
+                                color="primary" 
                 >
                     START
                 </CustomButton>
                 </Link>
+                }
+                
             </div>
             
             

@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {Route} from 'react-router-dom'
 import Splash from './pages/Splah'
 import './App.css'
+import Disagree from './pages/Disagree'
 
 //import InstructModal from './components/Modal'
 
@@ -62,7 +63,18 @@ export default class App extends Component {
     this.setState({
       isInstalled: true
     })
-    console.log(`change!`)
+  }
+
+  handleUnInstall = () => {
+    this.setState({
+      isInstalled: false
+    })
+  }
+
+  handleInstruct = (value) => {
+    this.setState({
+      instrument: value
+    })
   }
 
   render() {
@@ -85,6 +97,7 @@ export default class App extends Component {
                                       isInstalled = {this.state.isInstalled} 
                                 />}/>
         <Route path = "/splash" component={Splash}/>
+        <Route path = "/disagree" component={Disagree}/>
       </div>
     )
   }

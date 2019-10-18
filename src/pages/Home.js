@@ -11,7 +11,6 @@ class Home extends Component {
   constructor(props){
     super(props)
     this.state = {
-      open : true,
       isInstalled : props.isInstalled,
       instructionText : "1. Please access app store",
       type : props.type
@@ -19,24 +18,6 @@ class Home extends Component {
     console.log(this.props)
     //this.handleInstall = this.handleInstall.bind(this)
   }
-
-  handleOpen = () => {
-      this.setState({
-          open : true
-      })
-  };
-
-  handleClose = () => {
-      this.setState({
-          open : false
-      })
-  }
-
-  // handleInstall = () => {
-  //   this.setState({
-  //     isInstalled : true
-  //   })
-  // }
 
   render(){
     console.log(this.state.isInstalled)

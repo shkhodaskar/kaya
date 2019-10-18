@@ -18,21 +18,8 @@ class AppStore extends Component{
         super(props)
         this.state = {
             type : props.type,
-            open : true,
         }
         console.log(this.props)
-    }
-    
-    handleOpen = () => {
-        this.setState({
-            open : true
-        })
-    };
-
-    handleClose = () => {
-        this.setState({
-            open : false
-        })
     }
 
     render(){
