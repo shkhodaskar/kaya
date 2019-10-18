@@ -20,9 +20,6 @@ function Description() {
         }else{
             setChecked({checkedAgree:false})
         }
-        //setChecked(e.target.value)
-        console.log(event.target.value)
-        console.log(checked.checkedAgree)
     };
 
     return (

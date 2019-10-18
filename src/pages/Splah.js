@@ -1,25 +1,30 @@
 import React,{Component} from 'react';
-import SplashImage from '../resources/logo.png';    //splash image(logo image)
+import SplashImage from '../resources/Landing page.png';    //splash image(logo image)
 
-//import {Link} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 class Splash extends Component{
 
+    state = {
+        redirect: false
+    }
+
     componentDidMount(){
         setTimeout(() => {
-            //this.props.handler('Kaya.')
-            // <Link to = "/splash" />
+            this.setState({
+                redirect: true
+            })
             console.log('go!')
         }, 2000);   //splash time second * 1000
     }
 
     render(){
+        if(this.state.redirect){
+            return (<Redirect to = "/"/>)
+        }
         return(
-            <div className='background_splash'>
-                <div className='splash_img'>
-                    <img src={SplashImage} alt="splash img" width='100px' height='100px'></img>
-                </div>
-                
+            <div className='splash_img'>
+                <img src={SplashImage} alt="splash img"></img>
             </div>
         )
     }

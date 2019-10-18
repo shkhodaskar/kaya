@@ -79,3 +79,13 @@
         grid-template-columns: repeat(4, 1fr);
     }
 }
+
+.splash_img{
+    text-align: center;
+}
+
+.splash_img img{
+
+    width: auto;
+    height: 100vh;
+}
