@@ -7,7 +7,7 @@ import IconButton from '../components/IconButton'
 import {Link} from 'react-router-dom'
 import Kaya from '../resources/logo.png';
 
-class Home extends Component {
+class HomeAfter extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -59,7 +59,7 @@ class Home extends Component {
       <IconButton img={Clock} name="Clock"></IconButton>
       {/* Sample Icon3 */}
       <IconButton img={Settings} name="Settings"></IconButton>
-      {this.props.isInstalled ? 
+      {!this.props.isInstalled ? 
         <Link to="/" className = 'icon'>
           <IconButton img={Kaya} name="KAYA" /> }
         </Link>
@@ -73,4 +73,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default HomeAfter

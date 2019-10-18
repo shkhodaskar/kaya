@@ -53,7 +53,7 @@ class AppStore extends Component{
             </div>
             <div className="InstallButton">
                 {/* <button onClick={()=>{this.props.handler('Click the KAYA application.')}}> */}
-                <Link   to = "/ios_backgroud">
+                <Link   to = "/ios_background/after" onClick={this.props.handleInstall}>
                 <Install    className='install_button' 
                             variant="contained" 
                             size="small" 

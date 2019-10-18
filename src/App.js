@@ -3,6 +3,7 @@ import Login from './pages/Login'
 import Description from './pages/Description'
 import Home from './pages/Home'
 import Store from './pages/Store'
+import HomeAfter from './pages/HomeAfter'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Route} from 'react-router-dom'
 import './App.css'
@@ -56,6 +57,12 @@ export default class App extends Component {
     }
   }
 
+  handlerInstall = () => {
+    this.setState({
+      isInstalled: true
+    })
+  }
+
   render() {
     return (
       <div className='device_container'>
@@ -69,9 +76,10 @@ export default class App extends Component {
         <Route exact path = "/" component = {Description}/>
         <Route path = "/login" component = {Login}/>
         <Route  path = "/ios_backgroud" 
-                component={()=><Home type = {this.state.type} isInstalled = {this.state.isInstalled}/>}/>
+                component={()=><Home isInstalled={this.state.isInstalled} type = {this.state.type} handler={this.handlerInstall}/>}/>
         <Route  path = {`/app_store/:${this.state.type}`} 
-                component={()=><Store type = {this.state.type}></Store>}/>
+                component={()=><Store handleInstall={this.handleInstall} type = {this.state.type}></Store>}/>
+        <Route  path = "/ios_background/after" component={HomeAfter} />
       </div>
     )
   }
