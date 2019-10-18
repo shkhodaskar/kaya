@@ -102,6 +102,7 @@ export default class App extends Component {
   }
 
   handleInstruct = (value) => {
+    console.log(value)
     this.setState({
       instrument: value
     })
@@ -120,10 +121,12 @@ export default class App extends Component {
                                           isOpen={this.state.isOpenInstruction}
                                           handleOpen={this.handleOpen}
                                           handleClose={this.handleClose}
-                                          instruct={this.state.instrument}
+                                          //instruct={this.state.instrument}
                                           /> : ''}
         
-        <Route exact path = "/" component = {Description}/>
+        <Route  exact path = "/" 
+                component = {()=><Description handleInstruct = {this.handleInstruct}/>}
+        />
         <Route path = "/login" component = {Login}/>
         <Route  path = "/ios_backgroud" 
                 component={()=><Home isInstalled={this.state.isInstalled} type = {this.state.type}/>}/>

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 import RadioGroup from '@material-ui/core/RadioGroup'
 import Radio from '@material-ui/core/Radio'
 
-function Description() {
+function Description(props) {
 
     const [checked, setChecked] = React.useState({
         checkedAgree: false
@@ -21,6 +21,8 @@ function Description() {
             setChecked({checkedAgree:false})
         }
     };
+
+    //const instruct = (value) => props.handleInstruct
 
     return (
         <div style={{padding:"1rem"}}>
@@ -69,8 +71,10 @@ function Description() {
             <div className="text-center">
                 {checked.checkedAgree === true ? 
                 
-                <Link to = "/login">
-                
+                <Link   to = "/login" 
+                        //onClick={instruct("d")}
+                >
+                {/* ('Please Enter Your ID & Password') */}
                 <CustomButton   className="mb-2" 
                                 variant="contained" 
                                 color="primary" 
