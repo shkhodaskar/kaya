@@ -11,7 +11,8 @@ import Description from './pages/Description'
 import Home from './pages/Home'
 import Store from './pages/Store'
 import Disagree from './pages/Disagree'
-//import InstructModal from './components/Modal'
+import Calendars from './pages/Calendars'
+import InstructModal from './components/Modal'
 
 import questionMark from './resources/question_mark.png'
 
@@ -29,12 +30,16 @@ export default class App extends Component {
       screen : "",
       type : getRandomType(),
       end : false,
-      instrument:"",
-      isInstalled: false
+      instrument:"Please Read All Description And Check Agree Or Disagress",
+      isInstalled: false,
+      isOpenInstruction: false
     }
 
     this.handler = this.handler.bind(this)
     this.handleInstall = this.handleInstall.bind(this)
+    this.handleInstruct = this.handleInstruct.bind(this)
+    this.handleOpen = this.handleOpen.bind(this)
+    this.handleClose = this.handleClose.bind(this)
     console.log(this.state.type)
   }
 
@@ -73,6 +78,29 @@ export default class App extends Component {
     })
   }
 
+  handleChangeType = () => {
+    if(this.setState.type === 'A'){
+      this.setState({type:'B'})
+    }else{
+      this.setState({type:'A'})
+    }
+    
+  }
+
+  handleOpen = () => {
+    this.setState({
+      isOpenInstruction: true
+    })
+  }
+
+  handleClose = () => {
+    this.setState({
+      isOpenInstruction: false
+    })
+
+    console.log(this.state.isOpenInstruction)
+  }
+
   handleInstruct = (value) => {
     this.setState({
       instrument: value
@@ -83,11 +111,17 @@ export default class App extends Component {
     return (
       <div className='device_container'>
         <div className = "instruction">
-          <button src={questionMark} >
+          <button onClick={this.handleOpen}
+          >
             <img src={questionMark} alt = "instruct"/>
           </button>
         </div>
-        
+        {this.state.isOpenInstruction? <InstructModal 
+                                          isOpen={this.state.isOpenInstruction}
+                                          handleOpen={this.handleOpen}
+                                          handleClose={this.handleClose}
+                                          instruct={this.state.instrument}
+                                          /> : ''}
         
         <Route exact path = "/" component = {Description}/>
         <Route path = "/login" component = {Login}/>
@@ -100,6 +134,7 @@ export default class App extends Component {
                                 />}/>
         <Route path = "/splash" component={Splash}/>
         <Route path = "/disagree" component={Disagree}/>
+        <Route path = "/calendars" component={Calendars}/>
       </div>
     )
   }
