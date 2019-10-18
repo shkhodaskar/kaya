@@ -3,9 +3,9 @@ import Login from './pages/Login'
 import Description from './pages/Description'
 import Home from './pages/Home'
 import Store from './pages/Store'
-import HomeAfter from './pages/HomeAfter'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Route} from 'react-router-dom'
+import Splash from './pages/Splah'
 import './App.css'
 
 //import InstructModal from './components/Modal'
@@ -31,6 +31,7 @@ export default class App extends Component {
     }
 
     this.handler = this.handler.bind(this)
+    this.handleInstall = this.handleInstall.bind(this)
     console.log(this.state.type)
   }
 
@@ -57,10 +58,11 @@ export default class App extends Component {
     }
   }
 
-  handlerInstall = () => {
+  handleInstall = () => {
     this.setState({
       isInstalled: true
     })
+    console.log(`change!`)
   }
 
   render() {
@@ -76,10 +78,13 @@ export default class App extends Component {
         <Route exact path = "/" component = {Description}/>
         <Route path = "/login" component = {Login}/>
         <Route  path = "/ios_backgroud" 
-                component={()=><Home isInstalled={this.state.isInstalled} type = {this.state.type} handler={this.handlerInstall}/>}/>
+                component={()=><Home isInstalled={this.state.isInstalled} type = {this.state.type}/>}/>
         <Route  path = {`/app_store/:${this.state.type}`} 
-                component={()=><Store handleInstall={this.handleInstall} type = {this.state.type}></Store>}/>
-        <Route  path = "/ios_background/after" component={HomeAfter} />
+                component={()=><Store handleInstall={this.handleInstall} 
+                                      type = {this.state.type} 
+                                      isInstalled = {this.state.isInstalled} 
+                                />}/>
+        <Route path = "/splash" component={Splash}/>
       </div>
     )
   }

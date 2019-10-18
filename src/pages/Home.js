@@ -60,7 +60,7 @@ class Home extends Component {
       {/* Sample Icon3 */}
       <IconButton img={Settings} name="Settings"></IconButton>
       {this.props.isInstalled ? 
-        <Link to="/" className = 'icon'>
+        <Link to="/splash" className = 'icon'>
           <IconButton img={Kaya} name="KAYA" /> }
         </Link>
         : 

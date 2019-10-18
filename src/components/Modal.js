@@ -3,8 +3,6 @@ import InStructModal from '@material-ui/core/Modal'
 
 export default function Modal() {
 
-
-
     return (
         <div>
             <InStructModal 
@@ -17,7 +15,8 @@ export default function Modal() {
                             textAlign: 'center',
                         }}>
                 <button onClick = {this.handleClose}>X</button>
-                <div>Please read the whole descripiton and install the app
+                <div>
+                    Please read the whole descripiton and install the app
                 </div>
                 </div>
             </InStructModal>
