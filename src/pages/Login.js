@@ -80,9 +80,6 @@ export default class Login extends Component {
                     <Link to = '/ios_backgroud' className='btn btn-success text-capitalize'>
                         skip
                     </Link>
-                    {/* <button  className="btn btn-lg btn-success bth-block skip-btn" onClick={()=> {this.props.handler('Description.')}}>
-                        Skip
-                    </button> */}
                     
                     </form>
                 </div>

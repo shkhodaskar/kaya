@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {Route} from 'react-router-dom'
 import './App.css'
 
+//import InstructModal from './components/Modal'
+
 import questionMark from './resources/question_mark.png'
 
 
@@ -23,11 +25,12 @@ export default class App extends Component {
       screen : "",
       type : getRandomType(),
       end : false,
-      instrument:""
+      instrument:"",
+      isInstalled: false
     }
 
     this.handler = this.handler.bind(this)
-
+    this.handleInstall = this.handleInstall.bind(this)
     console.log(this.state.type)
   }
 
@@ -42,7 +45,8 @@ export default class App extends Component {
         if(!this.state.first_try){
           this.setState({
               type : this.state.type === 'A' ? 'B' : 'A',
-              end : true
+              end : true,
+              isInstalled: false
           })
         }
         else{
@@ -55,12 +59,18 @@ export default class App extends Component {
 
   render() {
     return (
-      <div width=""className='device_container'>
-        <img className = "instruction_img" src={questionMark}/>
+      <div className='device_container'>
+        <div className = "instruction">
+          <button src={questionMark} >
+            <img src={questionMark} alt = "instruct"/>
+          </button>
+        </div>
+        
+        
         <Route exact path = "/" component = {Description}/>
         <Route path = "/login" component = {Login}/>
         <Route  path = "/ios_backgroud" 
-                component={()=><Home type = {this.state.type}/>}/>
+                component={()=><Home type = {this.state.type} isInstalled = {this.state.isInstalled}/>}/>
         <Route  path = {`/app_store/:${this.state.type}`} 
                 component={()=><Store type = {this.state.type}></Store>}/>
       </div>

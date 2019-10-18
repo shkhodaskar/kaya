@@ -5,17 +5,19 @@ import Clock from '../resources/Clock.png'
 import Settings from '../resources/Settings.png'
 import IconButton from '../components/IconButton'
 import {Link} from 'react-router-dom'
+import Kaya from '../resources/logo.png';
 
 class Home extends Component {
   constructor(props){
     super(props)
     this.state = {
       open : true,
-      isInstalled : false,
+      isInstalled : props.isInstalled,
       instructionText : "1. Please access app store",
       type : props.type
     }
-    console.log(this.state.type)
+    console.log(this.props)
+    //this.handleInstall = this.handleInstall.bind(this)
   }
 
   handleOpen = () => {
@@ -30,20 +32,24 @@ class Home extends Component {
       })
   }
 
-  handleInstall = () => {
-    this.setState({
-      isInstalled : true
-    })
-  }
+  // handleInstall = () => {
+  //   this.setState({
+  //     isInstalled : true
+  //   })
+  // }
 
   render(){
+    console.log(this.state.isInstalled)
     return (
       <section className="background_ios">
       {/* App Store Button : 1st Step */}
       {/* <button onClick={()=>{this.props.handler('Install application.')}}><IconButton img={AppStore} name="App Store"></IconButton></button> */}
       <Link to={`/app_store/:${this.state.type}`}
             className="icon"
-            state={this.props.type}
+            state={{
+              type: this.props.type,
+              isInstalled: this.props.isInstalled,
+            }}
       >
       <IconButton img={AppStore} name="App Store"></IconButton>
       </Link>
@@ -53,7 +59,15 @@ class Home extends Component {
       <IconButton img={Clock} name="Clock"></IconButton>
       {/* Sample Icon3 */}
       <IconButton img={Settings} name="Settings"></IconButton>
-      {this.state.isInstalled ? <IconButton /> : ''}
+      {this.state.isInstalled ? 
+        <Link to="/" className = 'icon'>
+          <IconButton img={Kaya} name="KAYA" /> }
+        </Link>
+        : 
+        ''
+      }
+      
+      
       </section>
     );
   }

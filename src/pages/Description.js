@@ -38,7 +38,7 @@ function Description() {
             {/* you put Title here */}
             <h1 style={{fontSize:"5vw", textAlign:"center"}}>Instructions and texts for the prototype</h1>
                 {/* you put Some Description here */}
-                <p> <br/><h2 style={{fontSize:"4vw"}}>Purpose and Procedure</h2><br/>
+                <br/><h2 style={{fontSize:"4vw"}}>Purpose and Procedure</h2><br/>
                 Thank you for taking part in this experiment. 
                 We are studying how users understand fertility self-tracking tools and algorithms. 
                 The experiment should take approximately 60 minutes to complete. 
@@ -48,7 +48,7 @@ function Description() {
                 <br/><br/>
                 You will see two versions of the same app, one after the other. There will be instructions for what to do. If you ever need to retrieve the instructions, just tap the (?) in the upper right corner:
                 <div style={{textAlign:"center"}}>
-                    <img src={questionMark}/>
+                    <img src={questionMark} alt = "instruct"/>
                 </div>
                 <br/>
                 <br/><h2 style={{fontSize:"4vw"}}>Responses will be Confidential</h2><br/>		
@@ -63,7 +63,7 @@ function Description() {
                 <br/>
                 <br/><h2 style={{fontSize:"4vw"}}>Statement of Consent</h2><br/>
                 By clicking "I agree", you consent to participate in this study.
-            </p>
+                
             
             <FormGroup>
                 <FormControlLabel control={

@@ -16,12 +16,11 @@ import {Link} from 'react-router-dom'
 class AppStore extends Component{
     constructor(props){
         super(props)
-        // console.log(props.type)
         this.state = {
             type : props.type,
-            open : true
+            open : true,
         }
-        console.log(this.state.type)
+        console.log(this.props)
     }
     
     handleOpen = () => {
@@ -54,8 +53,7 @@ class AppStore extends Component{
             </div>
             <div className="InstallButton">
                 {/* <button onClick={()=>{this.props.handler('Click the KAYA application.')}}> */}
-                <Link to = "ios_background">
-                </Link>
+                <Link   to = "/ios_backgroud">
                 <Install    className='install_button' 
                             variant="contained" 
                             size="small" 
@@ -65,7 +63,9 @@ class AppStore extends Component{
                                 borderRadius:"20px",
                             }}
                     >GET
-                </Install>
+                </Install >
+                </Link>
+                
                 {/* </button> */}
             </div>
             <div className="BlankNull"></div>

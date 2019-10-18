@@ -9,11 +9,20 @@
     position: relative;
 }
 
-.instruction_img{
-    width: 30px;
+.instruction{
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
+}
+
+.instruction button{
+    background: transparent;
+    border: none;
+}
+
+.instruction img{
+    width: 30px;
+    height: 30px;
 }
 
 .background_ios{
@@ -40,6 +49,13 @@
 .icon img{
     width: 80px;
     height: 80px;
+}
+
+.icon img[name="KAYA"] {
+    width: 69px;
+    height: 69px;
+    margin-left: 5px;
+    border-radius: 20px;
 }
 
 .icon h4{
