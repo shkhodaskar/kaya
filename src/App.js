@@ -11,7 +11,7 @@ import Description from './pages/Description'
 import Home from './pages/Home'
 import Store from './pages/Store'
 import Disagree from './pages/Disagree'
-import Calendars from './pages/Calendars'
+import Main from './pages/Main'
 import InstructModal from './components/Modal'
 import Input from './pages/Input'
 
@@ -138,7 +138,7 @@ export default class App extends Component {
                                 />}/>
         <Route path = "/splash" component={Splash}/>
         <Route path = "/disagree" component={Disagree}/>
-        <Route path = "/calendars" component={Calendars}/>
+        <Route path = "/main" component={Main}/>
         <Route path = "/input" component={Input}/>
       </div>
     )

@@ -3,6 +3,7 @@
     max-width: 500px;
     min-width: 320px;
     min-height: 667px;
+    height: 100vh;
     margin:auto;
     border: 2px solid #B22222;
     border-radius: 10px;
@@ -73,7 +74,7 @@
         grid-template-rows: 112px 112px 112px 112px;
     }
 }
-  
+
 @media screen and (min-width: 500px) {
     .background_ios {
         grid-template-columns: repeat(4, 1fr);
@@ -88,4 +89,10 @@
 
     width: auto;
     height: 100vh;
+}
+
+.main_screen{
+    background: #D3E6FF;
+    height: 100%;
+    width:100%;
 }
