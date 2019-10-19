@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 
-export default class Input extends Component {
-    render() {
-        return (
-            <div>
-                I am input page
-            </div>
-        )
-    }
+class input extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
+  render() {
+    return <h1>Hello world!!!</h1>
+  }
 }
+
+export default input
