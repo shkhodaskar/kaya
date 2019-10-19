@@ -13,6 +13,7 @@ import Store from './pages/Store'
 import Disagree from './pages/Disagree'
 import Calendars from './pages/Calendars'
 import InstructModal from './components/Modal'
+import Input from './pages/Input'
 
 import questionMark from './resources/question_mark.png'
 
@@ -138,6 +139,7 @@ export default class App extends Component {
         <Route path = "/splash" component={Splash}/>
         <Route path = "/disagree" component={Disagree}/>
         <Route path = "/calendars" component={Calendars}/>
+        <Route path = "/input" component={Input}/>
       </div>
     )
   }
