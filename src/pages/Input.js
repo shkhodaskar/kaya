@@ -6,7 +6,7 @@ class input extends React.Component {
 	}
 
   render() {
-    return <h1>GitHub setup!</h1>
+    return <h1>GitHub setup!!!</h1>
   }
 }
 
